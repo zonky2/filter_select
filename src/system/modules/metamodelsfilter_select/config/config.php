@@ -27,7 +27,7 @@ if (!defined('TL_ROOT'))
 $GLOBALS['METAMODELS']['filters']['select'] = array
 (
 	'class' => 'MetaModelFilterSettingSelect',
-	'attr_filter' => array('select'),
+	'attr_filter' => array('select','text'),
 	'image' => 'system/modules/metamodels_frontendfilter/html/filter_frontend.png',
 	'info_callback' => array('MetaModelFrontendFilterBackend','infoCallback'),
 );

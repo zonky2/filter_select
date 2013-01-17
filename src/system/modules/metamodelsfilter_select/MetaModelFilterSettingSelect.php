@@ -58,15 +58,29 @@ class MetaModelFilterSettingSelect extends MetaModelFilterSetting
 
 		if ($objAttribute && $strParamName && $strParamValue)
 		{
-			$objQuery = Database::getInstance()->prepare(sprintf(
-				'SELECT id FROM %s WHERE %s=(SELECT %s FROM %s WHERE %s=?)',
-				$this->getMetaModel()->getTableName(),
-				$objAttribute->getColName(),
-				$objAttribute->get('select_id'),
-				$objAttribute->get('select_table'),
-				$objAttribute->get('select_alias')
-				))
-				->execute($strParamValue);
+			switch($objAttribute->get('type'))
+			{
+				case 'select':
+					$objQuery = Database::getInstance()->prepare(sprintf(
+						'SELECT id FROM %s WHERE %s=(SELECT %s FROM %s WHERE %s=?)',
+						$this->getMetaModel()->getTableName(),
+						$objAttribute->getColName(),
+						$objAttribute->get('select_id'),
+						$objAttribute->get('select_table'),
+						$objAttribute->get('select_alias')
+						))
+						->execute($strParamValue);
+					break;
+
+				default:
+					$objQuery = Database::getInstance()->prepare(sprintf(
+						'SELECT id FROM %s WHERE %s=?',
+						$this->getMetaModel()->getTableName(),
+						$objAttribute->getColName()
+						))
+						->execute(urldecode($strParamValue));
+					break;
+			}
 
 			$arrIds = $objQuery->fetchEach('id');
 
@@ -92,16 +106,36 @@ class MetaModelFilterSettingSelect extends MetaModelFilterSetting
 	 */
 	public function getParameterDCA()
 	{
-		$objAttribute = $this->getMetaModel()->getAttributeById($this->get('attr_id'));
+		$objMetaModel = $this->getMetaModel();
+		$objAttribute = $objMetaModel->getAttributeById($this->get('attr_id'));
 		$arrOptions = $objAttribute->getFilterOptions();
 
 		if($this->get('onlyused'))
 		{
-			foreach($arrOptions as $key=>$val)
+			if($objAttribute->get('type')=='text')
 			{
-				if(count($objAttribute->searchFor($key)) < 1)
+				// unset all options
+				unset($arrOptions);
+
+				// get filtered data
+				$objFilter = $objMetaModel->prepareFilter($this->get('fid'), $_GET);
+				$objItems = $objMetaModel->findByFilter($objFilter, $objAttribute->getColname(), 0, 0, 'ASC', array($objAttribute->getColname()));
+				$arrItems = $objItems->parseAll();
+	
+				// re-set only possible options
+				foreach($arrItems as $arrItem)
 				{
-					unset($arrOptions[$key]);
+					$arrOptions[$arrItem['raw'][$objAttribute->getColname()]] = $arrItem['raw'][$objAttribute->getColname()];
+				}
+			}
+			else
+			{
+				foreach($arrOptions as $key=>$val)
+				{
+					if(count($objAttribute->searchFor($key)) < 1)
+					{
+						unset($arrOptions[$key]);
+					}
 				}
 			}
 		}
