@@ -125,7 +125,7 @@ class MetaModelFilterSettingSelect extends MetaModelFilterSetting
 				// re-set only possible options
 				foreach($arrItems as $arrItem)
 				{
-					$arrOptions[$arrItem['raw'][$objAttribute->getColname()]] = $arrItem['raw'][$objAttribute->getColname()];
+					$arrOptions[urlencode($arrItem['raw'][$objAttribute->getColname()])] = $arrItem['raw'][$objAttribute->getColname()];
 				}
 			}
 			else
