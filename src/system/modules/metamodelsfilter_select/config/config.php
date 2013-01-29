@@ -22,14 +22,14 @@ if (!defined('TL_ROOT'))
 /**
  * Frontend filter
  */
- 
+
 // select fields
 $GLOBALS['METAMODELS']['filters']['select'] = array
 (
 	'class' => 'MetaModelFilterSettingSelect',
 	'attr_filter' => array('select','text'),
-	'image' => 'system/modules/metamodels_frontendfilter/html/filter_frontend.png',
-	'info_callback' => array('MetaModelFrontendFilterBackend','infoCallback'),
+	'image' => 'system/modules/metamodels/html/filter_frontend.png',
+	'info_callback' => array('TableMetaModelFilterSetting','infoCallback'),
 );
 
 ?>

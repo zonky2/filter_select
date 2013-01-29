@@ -23,48 +23,16 @@ if (!defined('TL_ROOT'))
  * palettes
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends default'] = array
-(
-	'+config' => array('attr_id', 'urlparam', 'label', 'template', 'defaultid', 'blankoption', 'onlyused', 'onlypossible'),
-);
-
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'label';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'template';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'defaultid';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'blankoption';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlyused';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlypossible';
 
 /**
  * fields
  */
-
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['blankoption'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['blankoption'],
-	'exclude'                 => true,
-	'default'                 => true,
-	'inputType'               => 'checkbox',
-	'eval'                    => array(
-		'tl_class'            => 'w50',
-	),
-);
-
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['onlyused'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlyused'],
-	'exclude'                 => true,
-	'default'                 => true,
-	'inputType'               => 'checkbox',
-	'eval'                    => array(
-		'tl_class'            => 'w50 clr',
-	),
-);
-
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['onlypossible'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlypossible'],
-	'exclude'                 => true,
-	'default'                 => true,
-	'inputType'               => 'checkbox',
-	'eval'                    => array(
-		'tl_class'            => 'w50',
-	),
-);
 
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['defaultid'] = array
 (
