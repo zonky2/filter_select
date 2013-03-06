@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -7,7 +8,7 @@
  *
  * PHP version 5
  * @package    MetaModels
- * @subpackage FrontendFilter
+ * @subpackage FilterSelect
  * @author     Christian de la Haye <service@delahaye.de>
  * @copyright  The MetaModels team.
  * @license    LGPL.
@@ -17,13 +18,9 @@
 /**
  * filter types
  */
-
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['select']   = 'Einfache Auswahl';
-
 
 /**
  * fields
  */
-
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['defaultid']    = array('Standardwert', 'Standardwert für Auswahlen.');
-

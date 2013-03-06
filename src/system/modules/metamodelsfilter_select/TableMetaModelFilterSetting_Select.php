@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -7,28 +8,22 @@
  *
  * PHP version 5
  * @package    MetaModels
- * @subpackage FrontendFilter
+ * @subpackage FilterSelect
  * @author     Christian de la Haye <service@delahaye.de>
  * @copyright  The MetaModels team.
  * @license    LGPL.
  * @filesource
  */
-if (!defined('TL_ROOT'))
-{
-	die('You cannot access this file directly!');
-}
-
 
 /**
  * Provides be-functionalities
  *
  * @package	   MetaModels
- * @subpackage FrontendFilter
+ * @subpackage FilterSelect
  * @author     Christian de la Haye <service@delahaye.de>
  */
 class TableMetaModelFilterSetting_Select extends Backend
 {
-
 	/**
 	 * provide options for default selection
 	 * @param object
@@ -55,5 +50,3 @@ class TableMetaModelFilterSetting_Select extends Backend
 		return $arrAttribute['fields'][$arrAttribSetting['colname']]['options'];
 	}
 }
-
-?>

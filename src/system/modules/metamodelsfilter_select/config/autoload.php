@@ -10,19 +10,17 @@
  * @package    MetaModels
  * @subpackage FilterSelect
  * @author     Christian de la Haye <service@delahaye.de>
+ * @author     Andreas Isaak <info@andreas-isaak.de>
  * @copyright  The MetaModels team.
  * @license    LGPL.
  * @filesource
  */
 
-
 /**
- * filter types
+ * Register the classes
  */
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['select']   = 'Single selection';
-
-
-/**
- * fields
- */
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['defaultid']    = array('Default', 'Default value for selection.');
+ClassLoader::addClasses(array
+(
+	'MetaModelFilterSettingSelect'         => 'system/modules/metamodelsfilter_select/MetaModelFilterSettingSelect.php',
+	'TableMetaModelFilterSetting_Select'   => 'system/modules/metamodelsfilter_select/TableMetaModelFilterSetting_Select.php',
+));
