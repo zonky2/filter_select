@@ -15,12 +15,10 @@
  * @filesource
  */
 
-
 /**
  * filter types
  */
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['select']   = 'Single selection';
-
 
 /**
  * fields
