@@ -24,6 +24,7 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'blankoption';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlyused';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlypossible';
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+config'][] = 'urlparam';
 
 /**
  * fields
