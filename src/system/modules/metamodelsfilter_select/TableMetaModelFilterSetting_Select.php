@@ -26,27 +26,27 @@ class TableMetaModelFilterSetting_Select extends Backend
 {
 	/**
 	 * provide options for default selection
+	 *
 	 * @param object
+	 *
 	 * @return array
 	 */
-	public function getSelectDefault($objRow)
+	public function getSelectDefault($objDC)
 	{
 		$return = array();
 
-		if(!$objRow->activeRecord->attr_id)
+		if(!$objDC->getCurrentModel()->getProperty('attr_id'))
 		{
 			return $return;
 		}
 
-		$objAttribSetting = $this->Database->prepare("SELECT * FROM tl_metamodel_attribute WHERE id=(SELECT attr_id FROM tl_metamodel_filtersetting WHERE id=?)")
-			->execute($objRow->activeRecord->id);
+		$objAttribSetting = $this->Database
+			->prepare('SELECT * FROM tl_metamodel_attribute WHERE id=?')
+			->limit(1)
+			->execute($objDC->getCurrentModel()->getProperty('attr_id'));
 
-		$arrAttribSetting = $objAttribSetting->fetchAssoc();
+		$objAttribute = MetaModelAttributeFactory::createFromDB($objAttribSetting);
 
-		$objAttribute = MetaModelAttributeFactory::createFromArray($objAttribSetting->row());
-
-		$arrAttribute = $objAttribute->getItemDCA();
-		
-		return $arrAttribute['fields'][$arrAttribSetting['colname']]['options'];
+		return $objAttribute->getFilterOptions(null, $objDC->getCurrentModel()->getProperty('onlyused'));
 	}
 }
