@@ -46,7 +46,18 @@ class TableMetaModelFilterSetting_Select extends Backend
 			->execute($objDC->getCurrentModel()->getProperty('attr_id'));
 
 		$objAttribute = MetaModelAttributeFactory::createFromDB($objAttribSetting);
+		
+		$arrOptions = $objAttribute->getFilterOptions(null, $objDC->getCurrentModel()->getProperty('onlyused'));
+		
+		// Remove empty values.
+		foreach ($arrOptions as $mixOptionKey => $mixOptionValue)
+		{
+			if($mixOptionValue === '' || $mixOptionValue === null)
+			{
+				unset($arrOptions[$mixOptionKey]);
+			}
+		}
 
-		return $objAttribute->getFilterOptions(null, $objDC->getCurrentModel()->getProperty('onlyused'));
+		return $arrOptions;
 	}
 }
