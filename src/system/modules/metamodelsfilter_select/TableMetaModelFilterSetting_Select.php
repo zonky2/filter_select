@@ -52,6 +52,10 @@ class TableMetaModelFilterSetting_Select extends Backend
 		// Remove empty values.
 		foreach ($arrOptions as $mixOptionKey => $mixOptionValue)
 		{
+			// Remove html/php tags.
+			$mixOptionValue = strip_tags($mixOptionValue);
+			$mixOptionValue = trim($mixOptionValue);
+
 			if($mixOptionValue === '' || $mixOptionValue === null)
 			{
 				unset($arrOptions[$mixOptionKey]);
