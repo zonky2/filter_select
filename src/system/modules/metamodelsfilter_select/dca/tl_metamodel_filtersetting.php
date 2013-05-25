@@ -25,15 +25,3 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlyused';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] = 'onlypossible';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+config'][] = 'urlparam';
-
-/**
- * fields
- */
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['defaultid'] = array
-(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['defaultid'],
-	'exclude'                 => true,
-	'inputType'               => 'select',
-	'options_callback'        => array('TableMetaModelFilterSetting_Select','getSelectDefault'),
-	'eval'                    => array('tl_class'=>'w50 clr', 'includeBlankOption'=>true)
-);
