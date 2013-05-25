@@ -19,8 +19,3 @@
  * filter types
  */
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['select']   = 'Single selection';
-
-/**
- * fields
- */
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['defaultid']    = array('Default', 'Default value for selection.');
