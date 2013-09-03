@@ -18,12 +18,8 @@
 /**
  * Frontend filter
  */
-
-// select fields
-$GLOBALS['METAMODELS']['filters']['select'] = array
-(
-	'class' => 'MetaModelFilterSettingSelect',
-	'attr_filter' => array('select','text'),
-	'image' => 'system/modules/metamodelsfilter_select/html/filter_select.png',
-	'info_callback' => array('TableMetaModelFilterSetting','infoCallback'),
-);
+$GLOBALS['METAMODELS']['filters']['select']['class'] = 'MetaModelFilterSettingSelect';
+$GLOBALS['METAMODELS']['filters']['select']['image'] = 'system/modules/metamodelsfilter_select/html/filter_select.png';
+$GLOBALS['METAMODELS']['filters']['select']['info_callback'] = array('TableMetaModelFilterSetting', 'infoCallback');
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'select';
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'text';
