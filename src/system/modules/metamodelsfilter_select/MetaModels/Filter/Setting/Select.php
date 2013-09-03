@@ -15,14 +15,16 @@
  * @filesource
  */
 
+namespace MetaModels\Filter\Setting;
+
 /**
  * Filter "select field" for FE-filtering, based on filters by the meta models team.
  *
- * @package	   MetaModels
+ * @package    MetaModels
  * @subpackage FilterSelect
  * @author     Christian de la Haye <service@delahaye.de>
  */
-class MetaModelFilterSettingSelect extends MetaModelFilterSettingSimpleLookup
+class Select extends SimpleLookup
 {
 	/**
 	 * Overrides the parent implementation to always return true, as this setting is always optional.

@@ -21,5 +21,7 @@
  */
 ClassLoader::addClasses(array
 (
-	'MetaModelFilterSettingSelect'         => 'system/modules/metamodelsfilter_select/MetaModelFilterSettingSelect.php'
+	'MetaModels\Filter\Setting\Select' => 'system/modules/metamodelsfilter_select/MetaModels/Filter/Setting/Select.php',
+
+	'MetaModelFilterSettingSelect'     => 'system/modules/metamodelsfilter_select/deprecated/MetaModelFilterSettingSelect.php'
 ));
