@@ -21,6 +21,5 @@
  */
 ClassLoader::addClasses(array
 (
-	'MetaModelFilterSettingSelect'         => 'system/modules/metamodelsfilter_select/MetaModelFilterSettingSelect.php',
-	'TableMetaModelFilterSetting_Select'   => 'system/modules/metamodelsfilter_select/TableMetaModelFilterSetting_Select.php',
+	'MetaModelFilterSettingSelect'         => 'system/modules/metamodelsfilter_select/MetaModelFilterSettingSelect.php'
 ));
