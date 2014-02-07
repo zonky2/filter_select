@@ -20,10 +20,6 @@
  */
 $GLOBALS['METAMODELS']['filters']['select']['class']         = 'MetaModels\Filter\Setting\Select';
 $GLOBALS['METAMODELS']['filters']['select']['image']         = 'system/modules/metamodelsfilter_select/html/filter_select.png';
-$GLOBALS['METAMODELS']['filters']['select']['info_callback'] = array('MetaModels\Dca\Filter', 'infoCallback');
+$GLOBALS['METAMODELS']['filters']['select']['info_callback'] = array('MetaModels\DcGeneral\Events\Table\FilterSetting\DrawSetting', 'modelToLabelWithAttributeAndUrlParam');
 $GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'select';
 $GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'text';
-
-// non composerized Contao 2.X autoload support.
-$GLOBALS['MM_AUTOLOAD'][] = dirname(__DIR__);
-$GLOBALS['MM_AUTOLOAD'][] = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'deprecated';
