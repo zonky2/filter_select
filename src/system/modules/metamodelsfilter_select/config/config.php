@@ -22,4 +22,12 @@ $GLOBALS['METAMODELS']['filters']['select']['class']         = 'MetaModels\Filte
 $GLOBALS['METAMODELS']['filters']['select']['image']         = 'system/modules/metamodelsfilter_select/html/filter_select.png';
 $GLOBALS['METAMODELS']['filters']['select']['info_callback'] = array('MetaModels\DcGeneral\Events\Table\FilterSetting\DrawSetting', 'modelToLabelWithAttributeAndUrlParam');
 $GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'select';
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'translatedselect';
 $GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'text';
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'translatedtext';
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'tags';
+$GLOBALS['METAMODELS']['filters']['select']['attr_filter'][] = 'translatedtags';
+
+// non composerized Contao 2.X autoload support.
+$GLOBALS['MM_AUTOLOAD'][] = dirname(__DIR__);
+$GLOBALS['MM_AUTOLOAD'][] = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'deprecated';
