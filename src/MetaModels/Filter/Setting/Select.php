@@ -26,23 +26,23 @@ namespace MetaModels\Filter\Setting;
  */
 class Select extends SimpleLookup
 {
-	/**
-	 * Overrides the parent implementation to always return true, as this setting is always optional.
-	 *
-	 * @return bool true if all matches shall be returned, false otherwise.
-	 */
-	public function allowEmpty()
-	{
-		return true;
-	}
+    /**
+     * Overrides the parent implementation to always return true, as this setting is always optional.
+     *
+     * @return bool true if all matches shall be returned, false otherwise.
+     */
+    public function allowEmpty()
+    {
+        return true;
+    }
 
-	/**
-	 * Overrides the parent implementation to always return true, as this setting is always available for FE filtering.
-	 *
-	 * @return bool true as this setting is always available.
-	 */
-	public function enableFEFilterWidget()
-	{
-		return true;
-	}
+    /**
+     * Overrides the parent implementation to always return true, as this setting is always available for FE filtering.
+     *
+     * @return bool true as this setting is always available.
+     */
+    public function enableFEFilterWidget()
+    {
+        return true;
+    }
 }
