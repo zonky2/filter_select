@@ -30,7 +30,7 @@ class SelectFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
         parent::__construct();
 
         $this
-            ->setTypeName('idlist')
+            ->setTypeName('select')
             ->setTypeIcon('system/modules/metamodelsfilter_select/html/filter_select.png')
             ->setTypeClass('MetaModels\Filter\Setting\Select');
 
