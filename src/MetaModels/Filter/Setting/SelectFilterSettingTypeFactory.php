@@ -32,7 +32,8 @@ class SelectFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
         $this
             ->setTypeName('select')
             ->setTypeIcon('system/modules/metamodelsfilter_select/html/filter_select.png')
-            ->setTypeClass('MetaModels\Filter\Setting\Select');
+            ->setTypeClass('MetaModels\Filter\Setting\Select')
+            ->allowAttributeTypes();
 
         foreach (array(
             'select',
