@@ -23,18 +23,18 @@
  * palettes
  */
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'label';
+    'label';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'template';
+    'template';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'defaultid';
+    'defaultid';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'blankoption';
+    'blankoption';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'onlyused';
+    'onlyused';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'onlypossible';
+    'onlypossible';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+fefilter'][] =
-	'skipfilteroptions';
+    'skipfilteroptions';
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['select extends _attribute_']['+config'][]   =
-	'urlparam';
+    'urlparam';
