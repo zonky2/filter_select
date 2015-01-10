@@ -22,16 +22,8 @@ use MetaModels\MetaModelsEvents;
 return array
 (
     MetaModelsEvents::FILTER_SETTING_FACTORY_CREATE => array(
-        array(
-            function (CreateFilterSettingFactoryEvent $event) {
-                $filterFactory = $event->getFactory();
-                $selectFilterFactory = new SelectFilterSettingTypeFactory();
-                $filterFactory->addTypeFactory($selectFilterFactory);
-
-                $selectFilterFactory->addKnownAttributeType('country');
-            },
-            // Low priority to have select filter factory instantiated before we want to populate it.
-            - 200
-        )
+        function (CreateFilterSettingFactoryEvent $event) {
+            $event->getFactory()->addTypeFactory(new SelectFilterSettingTypeFactory());
+        }
     )
 );
