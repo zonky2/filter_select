@@ -6,4 +6,4 @@ tests/ export-ignore
 composer.lock export-ignore
 phpunit.xml.dist export-ignore
 build.default.properties export-ignore
-build.xml export-ignor
+build.xml export-ignore
